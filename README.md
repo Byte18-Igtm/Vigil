@@ -33,6 +33,9 @@ Proof, not promises. Real test runs, before and after, with the real output show
 Honest by design. Broken or do-nothing fixes are rejected automatically, the offline demo mode is clearly labelled, and the UI never claims something happened when it didn't.
 Points at the problem. The code view highlights the exact buggy line, like an editor would.
 🏗️ How it works
+
+```text
+
              ┌───────────────────────────┐
              │   Web interface (React)   │
              └─────────────┬─────────────┘
@@ -55,6 +58,8 @@ Points at the problem. The code view highlights the exact buggy line, like an ed
                Yes                   No
      apply on vigil/<id> branch   nothing changes
         run real tests ✔           (logged)
+```
+
 🔐 Security & trust
 🚫 Nothing is applied without approval, and approval must match the exact patch.
 🌿 Fixes go onto a separate git branch, only on a clean working tree.

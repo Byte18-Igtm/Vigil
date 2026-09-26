@@ -1,3 +1,4 @@
+```
 🛡️ Vigil
 Multi-agent bug fixing with human approval
 
@@ -30,10 +31,11 @@ Step	What happens
 Two agents that check each other. A fix is chosen because the Test Agent's evidence corroborates the Debug Agent, not on confidence alone.
 Approval you can trust. Each proposal has a unique fingerprint, so you can only approve the exact change you reviewed.
 Proof, not promises. Real test runs, before and after, with the real output shown.
-Honest by design. Broken or do-nothing fixes are rejected automatically, the offline demo mode is clearly labelled, and the UI never claims something happened when it didn't.
-Points at the problem. The code view highlights the exact buggy line, like an editor would.
+Honest by design. Broken or do-nothing fixes are rejected automatically; the offline demo mode is clearly labelled, and the UI never claims something happened when it didn't.
+Points at the problem. The code view highlights the exact buggy line, as an editor would.
 🏗️ How it works
-'''text
+
+
              ┌───────────────────────────┐
              │   Web interface (React)   │
              └─────────────┬─────────────┘
@@ -57,7 +59,7 @@ Points at the problem. The code view highlights the exact buggy line, like an ed
      apply on vigil/<id> branch   nothing changes
         run real tests ✔           (logged)
 
-'''
+
 
 🔐 Security & trust
 🚫 Nothing is applied without approval, and approval must match the exact patch.
@@ -117,3 +119,4 @@ Hannah Ahmed	Supervisor, integration & approval gate
 Nancy S	Debug & Test agents
 Sanmathi S Ambi	Frontend
 Shamanth N	Research, presentation & testing
+```

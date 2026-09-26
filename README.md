@@ -5,7 +5,7 @@ AI finds the bug. AI proposes the fix. You decide. Nothing changes in your code 
 
 Built for the IBM Bob 2.0 Hackathon, with IBM Bob as our main builder.
 
-🎥 Demo video: add link · 🌐 Live demo: add link · 📊 Slides: add link 
+🌐 Live demo: https://vigil-site.onrender.com · 🎥 Demo video: add link · 📊 Slides: add link
 
 💡 The problem
 
@@ -33,9 +33,7 @@ Proof, not promises. Real test runs, before and after, with the real output show
 Honest by design. Broken or do-nothing fixes are rejected automatically, the offline demo mode is clearly labelled, and the UI never claims something happened when it didn't.
 Points at the problem. The code view highlights the exact buggy line, like an editor would.
 🏗️ How it works
-
-```text
-
+text
              ┌───────────────────────────┐
              │   Web interface (React)   │
              └─────────────┬─────────────┘
@@ -58,13 +56,11 @@ Points at the problem. The code view highlights the exact buggy line, like an ed
                Yes                   No
      apply on vigil/<id> branch   nothing changes
         run real tests ✔           (logged)
-```
-
 🔐 Security & trust
 🚫 Nothing is applied without approval, and approval must match the exact patch.
 🌿 Fixes go onto a separate git branch, only on a clean working tree.
 👀 Agents are read-only: they propose changes and never write files.
-🏠 Runs locally, only on allowed project folders.
+📁 Vigil only works inside allowed project folders. The public demo runs on an isolated sample project.
 🙈 Secrets are redacted from logs and reports; keys are never stored in code.
 📜 Every approval and rejection is recorded in an audit trail.
 🧰 Built with
@@ -72,7 +68,16 @@ IBM Bob 2.0: our main builder of the supervisor, approval gate, agent integratio
 Python + FastAPI for the backend and orchestration
 React + Vite + Tailwind for the web interface
 Groq (gpt-oss-120b) powering the AI agents
+Render for hosting the live demo
 pytest: 271 automated tests, including the approval gate, concurrent approvals and patching against real git repositories
+🌐 Try it online
+Open https://vigil-site.onrender.com. The first load can take up to a minute while the free server wakes up.
+Click Scan for bugs. Vigil finds the failing test in the sample project.
+Tick the consent box and click Analyse.
+Review the highlighted line, the diff and the agents' reasoning, then click Approve or Reject.
+
+The live demo uses one shared sample project. If Scan reports "All tests pass", someone has already approved the fix, which shows it worked!
+
 🚀 Run it locally
 
 Requirements: Python 3.9+, Node.js 18+, git
@@ -102,9 +107,9 @@ It runs in a clearly labelled demo mode out of the box. Real AI mode uses Groq-p
 🔄 Revise: redirect the agents to a different approach
 👥 Team roles: control who can approve changes
 📦 Safe project upload: analyse external projects in an isolated sandbox
-
 👩‍💻 Team
-Hannah Ahmed: Supervisor, integration & approval gate
-Nancy S: Debug & Test agents
-Sanmathi S Ambi: Frontend
-Shamanth. N: Research, PPT, testing 
+Name	Role
+Hannah Ahmed	Supervisor, integration & approval gate
+Nancy S	Debug & Test agents
+Sanmathi S Ambi	Frontend
+Shamanth N	Research, presentation & testing

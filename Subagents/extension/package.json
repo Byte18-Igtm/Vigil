@@ -1,0 +1,126 @@
+{
+  "name": "supervisor-agent-vscode",
+  "displayName": "Supervisor Agent — AI Coding Assistant",
+  "description": "Multi-agent coding assistant with Supervisor Agent and specialized Worker Agents (Explain, Debug, Test).",
+  "version": "1.0.0",
+  "publisher": "antigravity",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "categories": [
+    "AI",
+    "Programming Languages",
+    "Testing"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "viewsContainers": {
+      "activitybar": [
+        {
+          "id": "supervisor-sidebar",
+          "title": "Supervisor Agent",
+          "icon": "$(hubot)"
+        }
+      ]
+    },
+    "views": {
+      "supervisor-sidebar": [
+        {
+          "type": "webview",
+          "id": "supervisor.sideBotView",
+          "name": "Supervisor Side Bot"
+        }
+      ]
+    },
+    "commands": [
+      {
+        "command": "supervisor.markLine",
+        "title": "Supervisor: Mark Line 🔵",
+        "icon": "$(circle-filled)"
+      },
+      {
+        "command": "supervisor.explainLine",
+        "title": "Supervisor: Explain Selected Line",
+        "icon": "$(question)"
+      },
+      {
+        "command": "supervisor.debugLine",
+        "title": "Supervisor: Debug Selected Line",
+        "icon": "$(bug)"
+      },
+      {
+        "command": "supervisor.testLine",
+        "title": "Supervisor: Test Selected Line",
+        "icon": "$(beaker)"
+      },
+      {
+        "command": "supervisor.clearMarkers",
+        "title": "Supervisor: Clear All Markers"
+      },
+      {
+        "command": "supervisor.clearHistory",
+        "title": "Supervisor: Clear Event History",
+        "icon": "$(trash)"
+      },
+      {
+        "command": "supervisor.startServer",
+        "title": "Supervisor: Start Python Agent Server"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "supervisor.markLine",
+        "key": "alt+m",
+        "mac": "cmd+alt+m",
+        "when": "editorTextFocus"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "supervisor.markLine",
+          "group": "supervisor@1"
+        },
+        {
+          "command": "supervisor.explainLine",
+          "group": "supervisor@2"
+        },
+        {
+          "command": "supervisor.debugLine",
+          "group": "supervisor@3"
+        },
+        {
+          "command": "supervisor.testLine",
+          "group": "supervisor@4"
+        }
+      ],
+      "view/title": [
+        {
+          "command": "supervisor.clearHistory",
+          "when": "view == supervisor.sideBotView",
+          "group": "navigation"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Supervisor Agent",
+      "properties": {
+        "supervisor.serverPort": {
+          "type": "number",
+          "default": 8765,
+          "description": "Port of the Python Supervisor Agent Server"
+        },
+        "supervisor.autoStartServer": {
+          "type": "boolean",
+          "default": true,
+          "description": "Automatically launch the Python Supervisor server from .venv"
+        },
+        "supervisor.pythonPath": {
+          "type": "string",
+          "default": "${workspaceFolder}/.venv/Scripts/python.exe",
+          "description": "Path to Python interpreter in virtual environment"
+        }
+      }
+    }
+  }
+}

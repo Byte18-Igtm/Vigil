@@ -1,0 +1,16 @@
+Subject: average() giving wrong results??
+
+Hey, so I've been using the average function in our calc module and something
+seems off. When I call average([1, 2, 3, 4]) I get 2 back but I expected 2.5.
+At first I thought maybe I was passing the wrong list but I double-checked and
+nope. Tried a few more:
+
+  average([1, 3]) -> 2 (correct, lucky)
+  average([1, 2]) -> 1 (WRONG, should be 1.5)
+  average([10, 11]) -> 10 (WRONG, should be 10.5)
+
+It only seems to work when all the values happen to divide evenly. My colleague
+said maybe its a types thing but I dunno. Could be something to do with how
+Python handles division? Not sure where to look.
+
+This is blocking our stats report so any help appreciated asap!

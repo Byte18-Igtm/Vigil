@@ -103,7 +103,7 @@ cd ai-developer-assistant
 npm install
 VITE_DEMO_REPO_PATH="$(cd ../Supervisor/demo_target && pwd)" npm run dev
 
-Open http://127.0.0.1:5173, then click Scan for bugs → Analyse → Approve or Reject.
+Open https://vigil-site.onrender.com/, then click Scan for bugs → Analyse → Approve or Reject.
 
 It runs in a clearly labelled demo mode out of the box. Real AI mode uses Groq-powered agents; see Supervisor/STUBS.md for configuration.
 

@@ -6,7 +6,7 @@ AI finds the bug. AI proposes the fix. You decide. Nothing changes in your code 
 
 Built for the IBM Bob 2.0 Hackathon, with IBM Bob as our main builder.
 
-🌐 Live demo: https://vigil-site.onrender.com · 🎥 Demo video: add link · 📊 Slides: add link
+🌐 Live demo: https://vigil-site.onrender.com 
 
 💡 The problem
 
